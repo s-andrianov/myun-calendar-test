@@ -1,0 +1,143 @@
+.calendar-table {
+  min-width: 360px;
+  padding: 0.4rem;
+  border-radius: 0.8rem;
+  background: var(--tg-theme-section-bg-color);
+}
+
+table {
+  clear: both;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.days > td {
+  text-transform: uppercase;
+}
+
+.calendar-day {
+  user-select: none;
+  height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  width: 14.28571429%;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+td {
+  user-select: none;
+  height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  width: 14.28571429%;
+  padding: 0.25rem;
+}
+
+td > div {
+  background: var(--tg-theme-section-bg-color);
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+}
+
+td.not-current > div {
+  font-weight: lighter;
+  opacity: 0.5;
+}
+
+td.today > div {
+  position: relative;
+}
+
+td.today > div::before {
+  position: absolute;
+  top: -14px;
+  content: 'сегодня';
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+td.today > div::after {
+  position: absolute;
+  bottom: 4px;
+  content: '';
+  width: 10px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--tg-theme-text-color);
+}
+
+tr:last-child td > div {
+  margin-bottom: 0;
+}
+
+.calendar-items-wrapper {
+  margin-left: -10px;
+  margin-right: -10px;
+  overflow-y: auto;
+  max-height: calc(100% - 20px);
+}
+
+.calendar-day.past-date {
+  opacity: 0.45;
+}
+
+.calendar-day:hover > div {
+  opacity: 0.65;
+}
+
+#btnPrev {
+  float: left;
+}
+
+#btnPrev:before {
+  content: '\f104';
+  font-family: FontAwesome;
+}
+
+#btnNext {
+  float: right;
+}
+
+#btnNext:after {
+  content: '\f105';
+  font-family: FontAwesome;
+}
+
+td:has(.btn) {
+  padding: 0.25rem;
+}
+
+.btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 0.4rem;
+  background: var(--tg-theme-button-color);
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: var(--tg-theme-button-text-color);
+  cursor: pointer;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}

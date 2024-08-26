@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+
+:root {
+  --tg-theme-bg-color: #191f2d;
+  --tg-theme-text-color: #ffffff;
+  --tg-theme-section-bg-color: #20303f;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 1rem 0;
+
+  font-family: 'Inter Tight', sans-serif;
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}

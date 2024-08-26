@@ -1,0 +1,49 @@
+<table class="calendar-table" *ngIf="calendar">
+  <thead>
+    <tr>
+      <td class="btnTd">
+        <button
+          class="btn"
+          id="btnPrev"
+          (click)="decreaseMonth()"
+          type="button"
+        ></button>
+      </td>
+      <td class="month" colspan="5">{{ displayMonth + ' ' + displayYear }}</td>
+      <!-- <td><input type="button" (click)="setCurrentMonth()" value="today" /></td> -->
+      <td class="btnTd">
+        <button
+          class="btn"
+          id="btnNext"
+          (click)="increaseMonth()"
+          type="button"
+        ></button>
+      </td>
+    </tr>
+    <tr class="days">
+      <td>Пн</td>
+      <td>Вт</td>
+      <td>Ср</td>
+      <td>Чт</td>
+      <td>Пт</td>
+      <td>Сб</td>
+      <td>Вс</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of calendar | chunk : 7; let i = index">
+      <td
+        class="calendar-day"
+        [ngClass]="{
+          'not-current': c.isNotCurrent,
+          today: c.isToday
+        }"
+        *ngFor="let c of row; let j = index"
+      >
+        <div class="calendar-day-header">
+          {{ c.date.getDate() }}
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
